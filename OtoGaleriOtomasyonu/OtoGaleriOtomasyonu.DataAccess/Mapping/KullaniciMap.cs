@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
 using System.Text;
 
-namespace DataAccess.Mapping
+namespace OtoGaleriOtomasyonu.DataAccess.Mapping
 {
     public class KullaniciMap : EntityTypeConfiguration<Kullanici>
     {
