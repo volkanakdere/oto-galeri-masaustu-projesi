@@ -12,6 +12,15 @@ namespace DataAccess
     {
 
         public DbSet<Arac> Araclar { get; set; }
+        public DbSet<KasaTip> KasaTipleri { get; set; }
+        public DbSet<Kullanici> Kullanicilar { get; set; }
+        public DbSet<Marka> Markalar { get; set; }
+        public DbSet<Model> Modeller { get; set; }
+        public DbSet<Musteri> Musteriler { get; set; }
+        public DbSet<Satis> Satislar { get; set; }
+        public DbSet<VasitaTur> VasitaTurleri { get; set; }
+        public DbSet<VitesTip> VitesTipleri { get; set; }
+        public DbSet<YakitTur> YakitTurleri { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
