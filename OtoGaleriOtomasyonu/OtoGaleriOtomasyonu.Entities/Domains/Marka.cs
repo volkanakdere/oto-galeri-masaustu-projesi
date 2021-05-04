@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities.Domains
+namespace OtoGaleriOtomasyonu.Entities.Domains
 {
-    public class VasitaTur
+    public class Marka
     {
         public int Id { get; set; }
-        public string VasitaTuru { get; set; }
+        public string MarkaAdi { get; set; }
 
     }
 }

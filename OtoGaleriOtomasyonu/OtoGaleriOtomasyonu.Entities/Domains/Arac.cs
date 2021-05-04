@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities.Domains
+namespace OtoGaleriOtomasyonu.Entities.Domains
 {
     public class Arac
     {

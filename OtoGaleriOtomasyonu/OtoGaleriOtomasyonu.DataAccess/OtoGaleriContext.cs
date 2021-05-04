@@ -1,7 +1,7 @@
-﻿using Entities.Domains;
-using Microsoft.EntityFrameworkCore;
+﻿using OtoGaleriOtomasyonu.Entities.Domains;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -10,6 +10,10 @@ namespace DataAccess
 {
     public class OtoGaleriContext : DbContext
     {
+        public OtoGaleriContext()
+        {
+            Database.SetInitializer<OtoGaleriContext>(null);
+        }
 
         public DbSet<Arac> Araclar { get; set; }
         public DbSet<KasaTip> KasaTipleri { get; set; }
@@ -22,16 +26,9 @@ namespace DataAccess
         public DbSet<VitesTip> VitesTipleri { get; set; }
         public DbSet<YakitTur> YakitTurleri { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Database=otogaleri;Trusted_Connection=true");
+            modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
         }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            //base.OnModelCreating(modelBuilder);
-        }
-        
     }
 }
