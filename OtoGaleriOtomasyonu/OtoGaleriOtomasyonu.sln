@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtoGaleriOtomasyonu.DataAcc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtoGaleriOtomasyonu.Entities", "OtoGaleriOtomasyonu.Entities\OtoGaleriOtomasyonu.Entities.csproj", "{013A4D8F-B7EC-4CE2-9FC7-033C9CBCF1FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtoGaleriOtomasyonu.WindowsFormUI", "OtoGaleriOtomasyonu.WindowsFormUI\OtoGaleriOtomasyonu.WindowsFormUI.csproj", "{F4539507-8C55-4A00-ADEE-1210FC6FAEC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{013A4D8F-B7EC-4CE2-9FC7-033C9CBCF1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{013A4D8F-B7EC-4CE2-9FC7-033C9CBCF1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{013A4D8F-B7EC-4CE2-9FC7-033C9CBCF1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4539507-8C55-4A00-ADEE-1210FC6FAEC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4539507-8C55-4A00-ADEE-1210FC6FAEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4539507-8C55-4A00-ADEE-1210FC6FAEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4539507-8C55-4A00-ADEE-1210FC6FAEC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
