@@ -33,8 +33,11 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             }
             else
             {
-                MessageBox.Show(kullanici.KAd + " Hoşgeldiniz");
+                anasayfa frm = new anasayfa();
+                frm.Show();
+                this.Hide();
             }
         }
+
     }
 }

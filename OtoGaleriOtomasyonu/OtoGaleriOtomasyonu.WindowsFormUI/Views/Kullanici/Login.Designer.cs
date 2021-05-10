@@ -29,6 +29,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.lblEposta = new System.Windows.Forms.Label();
             this.tbxEposta = new System.Windows.Forms.TextBox();
             this.tbxParola = new System.Windows.Forms.TextBox();
@@ -38,64 +39,52 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // lblEposta
             // 
-            this.lblEposta.AutoSize = true;
-            this.lblEposta.Location = new System.Drawing.Point(118, 96);
+            resources.ApplyResources(this.lblEposta, "lblEposta");
             this.lblEposta.Name = "lblEposta";
-            this.lblEposta.Size = new System.Drawing.Size(50, 13);
-            this.lblEposta.TabIndex = 0;
-            this.lblEposta.Text = "E-Posta :";
             // 
             // tbxEposta
             // 
-            this.tbxEposta.Location = new System.Drawing.Point(174, 93);
+            this.tbxEposta.BackColor = System.Drawing.SystemColors.ButtonFace;
+            resources.ApplyResources(this.tbxEposta, "tbxEposta");
             this.tbxEposta.Name = "tbxEposta";
-            this.tbxEposta.Size = new System.Drawing.Size(232, 20);
-            this.tbxEposta.TabIndex = 1;
             // 
             // tbxParola
             // 
-            this.tbxParola.Location = new System.Drawing.Point(174, 130);
+            this.tbxParola.BackColor = System.Drawing.SystemColors.ButtonFace;
+            resources.ApplyResources(this.tbxParola, "tbxParola");
             this.tbxParola.Name = "tbxParola";
-            this.tbxParola.Size = new System.Drawing.Size(232, 20);
-            this.tbxParola.TabIndex = 3;
             this.tbxParola.UseSystemPasswordChar = true;
             // 
             // lblParola
             // 
-            this.lblParola.AutoSize = true;
-            this.lblParola.Location = new System.Drawing.Point(118, 133);
+            resources.ApplyResources(this.lblParola, "lblParola");
             this.lblParola.Name = "lblParola";
-            this.lblParola.Size = new System.Drawing.Size(43, 13);
-            this.lblParola.TabIndex = 2;
-            this.lblParola.Text = "Parola :";
             // 
             // btnGirisYap
             // 
-            this.btnGirisYap.Location = new System.Drawing.Point(331, 156);
+            this.btnGirisYap.BackColor = System.Drawing.Color.CadetBlue;
+            resources.ApplyResources(this.btnGirisYap, "btnGirisYap");
+            this.btnGirisYap.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnGirisYap.Name = "btnGirisYap";
-            this.btnGirisYap.Size = new System.Drawing.Size(75, 23);
-            this.btnGirisYap.TabIndex = 4;
-            this.btnGirisYap.Text = "Giriş Yap";
-            this.btnGirisYap.UseVisualStyleBackColor = true;
+            this.btnGirisYap.UseVisualStyleBackColor = false;
             this.btnGirisYap.Click += new System.EventHandler(this.btnGirisYap_Click);
             // 
             // Login
             // 
             this.AcceptButton = this.btnGirisYap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(547, 233);
             this.Controls.Add(this.btnGirisYap);
             this.Controls.Add(this.tbxParola);
             this.Controls.Add(this.lblParola);
             this.Controls.Add(this.tbxEposta);
             this.Controls.Add(this.lblEposta);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Giriş Yap";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
