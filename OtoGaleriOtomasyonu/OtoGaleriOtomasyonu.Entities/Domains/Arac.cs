@@ -17,7 +17,7 @@ namespace OtoGaleriOtomasyonu.Entities.Domains
         public string Renk { get; set; }
         public int YakitTurId { get; set; }
         public string MotorGucu { get; set; }
-        public int MotorHacmi { get; set; }
+        public string MotorHacmi { get; set; }
         public string HasarKaydiVarMi { get; set; }
         public decimal HasarKaydiTutari { get; set; }
         public DateTime SonBakimTarihi { get; set; }

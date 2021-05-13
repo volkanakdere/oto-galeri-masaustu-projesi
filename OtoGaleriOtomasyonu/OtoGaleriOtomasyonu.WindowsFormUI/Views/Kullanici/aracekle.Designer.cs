@@ -54,7 +54,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.txtSasi = new System.Windows.Forms.TextBox();
             this.txtRhst = new System.Windows.Forms.TextBox();
             this.txtPlk = new System.Windows.Forms.TextBox();
-            this.cbTur = new System.Windows.Forms.ComboBox();
+            this.cbVasitaTuru = new System.Windows.Forms.ComboBox();
             this.cbMrk = new System.Windows.Forms.ComboBox();
             this.cbMdl = new System.Windows.Forms.ComboBox();
             this.txtYil = new System.Windows.Forms.TextBox();
@@ -77,7 +77,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.dateBakim = new System.Windows.Forms.DateTimePicker();
             this.dateMuayene = new System.Windows.Forms.DateTimePicker();
             this.btnArcgtr = new System.Windows.Forms.Button();
-            this.txtArcGtr = new System.Windows.Forms.TextBox();
+            this.txtPlakayaGoreArcGtr = new System.Windows.Forms.TextBox();
             this.lblArcGtr = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -302,13 +302,13 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.txtPlk.Size = new System.Drawing.Size(116, 20);
             this.txtPlk.TabIndex = 24;
             // 
-            // cbTur
+            // cbVasitaTuru
             // 
-            this.cbTur.FormattingEnabled = true;
-            this.cbTur.Location = new System.Drawing.Point(78, 78);
-            this.cbTur.Name = "cbTur";
-            this.cbTur.Size = new System.Drawing.Size(116, 21);
-            this.cbTur.TabIndex = 25;
+            this.cbVasitaTuru.FormattingEnabled = true;
+            this.cbVasitaTuru.Location = new System.Drawing.Point(78, 78);
+            this.cbVasitaTuru.Name = "cbVasitaTuru";
+            this.cbVasitaTuru.Size = new System.Drawing.Size(116, 21);
+            this.cbVasitaTuru.TabIndex = 25;
             // 
             // cbMrk
             // 
@@ -317,6 +317,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.cbMrk.Name = "cbMrk";
             this.cbMrk.Size = new System.Drawing.Size(116, 21);
             this.cbMrk.TabIndex = 26;
+            this.cbMrk.SelectedIndexChanged += new System.EventHandler(this.cbMrk_SelectedIndexChanged);
             // 
             // cbMdl
             // 
@@ -434,6 +435,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.btnAracEkle.TabIndex = 43;
             this.btnAracEkle.Text = "Araç Ekle";
             this.btnAracEkle.UseVisualStyleBackColor = true;
+            this.btnAracEkle.Click += new System.EventHandler(this.btnAracEkle_Click);
             // 
             // btnAracSil
             // 
@@ -479,20 +481,21 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // btnArcgtr
             // 
-            this.btnArcgtr.Location = new System.Drawing.Point(440, 280);
+            this.btnArcgtr.Location = new System.Drawing.Point(438, 284);
             this.btnArcgtr.Name = "btnArcgtr";
             this.btnArcgtr.Size = new System.Drawing.Size(152, 27);
             this.btnArcgtr.TabIndex = 49;
             this.btnArcgtr.Text = "Araç Bilgilerini Getir";
             this.btnArcgtr.UseVisualStyleBackColor = true;
+            this.btnArcgtr.Click += new System.EventHandler(this.btnArcgtr_Click);
             // 
-            // txtArcGtr
+            // txtPlakayaGoreArcGtr
             // 
-            this.txtArcGtr.Location = new System.Drawing.Point(269, 280);
-            this.txtArcGtr.Multiline = true;
-            this.txtArcGtr.Name = "txtArcGtr";
-            this.txtArcGtr.Size = new System.Drawing.Size(165, 27);
-            this.txtArcGtr.TabIndex = 50;
+            this.txtPlakayaGoreArcGtr.Location = new System.Drawing.Point(267, 284);
+            this.txtPlakayaGoreArcGtr.Multiline = true;
+            this.txtPlakayaGoreArcGtr.Name = "txtPlakayaGoreArcGtr";
+            this.txtPlakayaGoreArcGtr.Size = new System.Drawing.Size(165, 27);
+            this.txtPlakayaGoreArcGtr.TabIndex = 50;
             // 
             // lblArcGtr
             // 
@@ -519,7 +522,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblArcGtr);
-            this.Controls.Add(this.txtArcGtr);
+            this.Controls.Add(this.txtPlakayaGoreArcGtr);
             this.Controls.Add(this.btnArcgtr);
             this.Controls.Add(this.dateMuayene);
             this.Controls.Add(this.dateBakim);
@@ -542,7 +545,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.Controls.Add(this.txtYil);
             this.Controls.Add(this.cbMdl);
             this.Controls.Add(this.cbMrk);
-            this.Controls.Add(this.cbTur);
+            this.Controls.Add(this.cbVasitaTuru);
             this.Controls.Add(this.txtPlk);
             this.Controls.Add(this.txtRhst);
             this.Controls.Add(this.txtSasi);
@@ -571,6 +574,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.Name = "aracekle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AKDERE OTOMOTİV | Araç Ekle - Araç Sil - Araç Güncelle";
+            this.Load += new System.EventHandler(this.aracekle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -605,7 +609,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
         private System.Windows.Forms.TextBox txtSasi;
         private System.Windows.Forms.TextBox txtRhst;
         private System.Windows.Forms.TextBox txtPlk;
-        private System.Windows.Forms.ComboBox cbTur;
+        private System.Windows.Forms.ComboBox cbVasitaTuru;
         private System.Windows.Forms.ComboBox cbMrk;
         private System.Windows.Forms.ComboBox cbMdl;
         private System.Windows.Forms.TextBox txtYil;
@@ -628,7 +632,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
         private System.Windows.Forms.DateTimePicker dateBakim;
         private System.Windows.Forms.DateTimePicker dateMuayene;
         private System.Windows.Forms.Button btnArcgtr;
-        private System.Windows.Forms.TextBox txtArcGtr;
+        private System.Windows.Forms.TextBox txtPlakayaGoreArcGtr;
         private System.Windows.Forms.Label lblArcGtr;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
