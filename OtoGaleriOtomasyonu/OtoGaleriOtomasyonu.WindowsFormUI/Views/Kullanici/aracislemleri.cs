@@ -1,4 +1,5 @@
 ﻿using OtoGaleriOtomasyonu.DataAccess;
+using OtoGaleriOtomasyonu.DataAccess.Concrete;
 using OtoGaleriOtomasyonu.Entities.Domains;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
     public partial class aracislemleri : Form
     {
         OtoGaleriContext context = new OtoGaleriContext();
+        AracDal aracDal = new AracDal();
 
         public aracislemleri()
         {
@@ -64,11 +66,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             var markaId = ((Marka)cbAracislemleriMarka.SelectedItem).Id;
             var modelId = ((Model)cbAracislemleriModel.SelectedItem).Id;
 
-            var araclar = context.Araclar
-                            .Where(x => x.VasitaTurId == vasitaTurId)
-                            .Where(x => x.MarkaId == markaId)
-                            .Where(x => x.ModelId == modelId).ToList();
-
+            var araclar = aracDal.GetirAracDetayDtoList(vasitaTurId, modelId, markaId);
 
 
             dataGridView1.DataSource = araclar;
@@ -87,18 +85,18 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
 
             if (string.IsNullOrEmpty(ruhsatNo) == false)
             {
-                dataGridView1.DataSource = context.Araclar.Where(x => x.RuhsatNo == ruhsatNo).ToList();
+                dataGridView1.DataSource = aracDal.GetirAracDetayDtoList(ruhsatNo, null);
             }
 
             if (string.IsNullOrEmpty(plaka) == false)
             {
-                dataGridView1.DataSource = context.Araclar.Where(x => x.Plaka == plaka).ToList();
+                dataGridView1.DataSource = aracDal.GetirAracDetayDtoList(null, plaka);
             }
         }
 
         private void btnTumArac_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = context.Araclar.ToList();            
+            dataGridView1.DataSource = aracDal.GetirAracDetayDtoList();
         }
     }
 }
