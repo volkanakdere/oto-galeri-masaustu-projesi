@@ -52,6 +52,7 @@
     <Compile Include="Domains\VitesTip.cs" />
     <Compile Include="Domains\YakitTur.cs" />
     <Compile Include="Dtos\AracDetayDto.cs" />
+    <Compile Include="Dtos\MusteriDetayDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

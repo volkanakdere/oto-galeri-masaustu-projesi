@@ -9,7 +9,7 @@ namespace OtoGaleriOtomasyonu.Entities.Domains
         public int Id { get; set; }
         public string MAd { get; set; }
         public string MSoyad { get; set; }
-        public int MTelefon { get; set; }
+        public string MTelefon { get; set; }
         public string MEposta { get; set; }
         public string MCinsiyet { get; set; }
 

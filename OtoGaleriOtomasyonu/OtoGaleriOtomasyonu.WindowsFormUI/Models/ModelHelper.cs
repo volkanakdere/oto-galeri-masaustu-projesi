@@ -26,5 +26,6 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Models
         public static string[] MotorHacimleri = new[] { "1.0", "1.2", "1.3", "1.4", "1.5", "1.6", "2.0", "3.0" };
         public static string[] Renkler = new[] { "Beyaz", "Kırmızı", "Mavi", "Gri", "Siyah", "Gümüş Gri", "Füme", "Lacivert" };
         public static string[] HasarDurumlari = new[] { "Var", "Yok" };
+        
     }
 }
