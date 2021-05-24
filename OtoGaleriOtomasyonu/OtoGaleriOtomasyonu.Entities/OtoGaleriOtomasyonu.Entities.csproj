@@ -53,6 +53,7 @@
     <Compile Include="Domains\YakitTur.cs" />
     <Compile Include="Dtos\AracDetayDto.cs" />
     <Compile Include="Dtos\MusteriDetayDto.cs" />
+    <Compile Include="Dtos\SatisDetayDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

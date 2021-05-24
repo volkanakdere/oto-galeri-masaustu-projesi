@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Concrete\AracDal.cs" />
     <Compile Include="Concrete\MusteriDal.cs" />
+    <Compile Include="Concrete\SatisDal.cs" />
     <Compile Include="Mapping\AracMap.cs" />
     <Compile Include="Mapping\KasaTipMap.cs" />
     <Compile Include="Mapping\KullaniciMap.cs" />

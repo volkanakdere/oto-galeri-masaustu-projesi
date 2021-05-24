@@ -19,6 +19,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
         OtoGaleriContext context = new OtoGaleriContext();
         AracDal aracDal = new AracDal();
         MusteriDal musteriDal = new MusteriDal();
+        SatisDal satisDal = new SatisDal();
 
         public satisislemleri()
         {
@@ -62,7 +63,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
 
         private void DoldurDgvSatis()
         {
-            dgvSatis.DataSource = aracDal.GetirSatılıkAracDetayDtoList();
+            dgvSatis.DataSource = satisDal.GetirSatisDetayDtoList();
         }
 
         private void cbAraclar_SelectionChangeCommitted(object sender, EventArgs e)
