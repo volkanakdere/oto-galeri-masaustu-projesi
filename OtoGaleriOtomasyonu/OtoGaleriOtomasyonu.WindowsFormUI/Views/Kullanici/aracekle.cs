@@ -1,6 +1,7 @@
 ﻿using OtoGaleriOtomasyonu.DataAccess;
 using OtoGaleriOtomasyonu.DataAccess.Concrete;
 using OtoGaleriOtomasyonu.Entities.Domains;
+using OtoGaleriOtomasyonu.Entities.Dtos;
 using OtoGaleriOtomasyonu.WindowsFormUI.Models;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
     {
         OtoGaleriContext context = new OtoGaleriContext();
         AracDal aracDal = new AracDal();
+        Arac seciliArac;
         public aracekle()
         {
             InitializeComponent();
@@ -86,6 +88,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
 
         private void btnAracEkle_Click(object sender, EventArgs e)
         {
+            
             var arac = new Arac
             {
                 Aciklama = txtAciklama.Text,
@@ -127,6 +130,141 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             cbMdl.DataSource = context.Modeller.Where(x => x.MarkaId == markaId).ToList();
             cbMdl.DisplayMember = "ModelAdi";
             cbMdl.ValueMember = "Id";
+        }
+        private void InputlariResetle()
+        {
+            txtSasi.Text = "";
+            txtRhst.Text = "";
+            txtPlk.Text = "";
+            cbVasitaTuru.SelectedIndex = 0;
+            cbMrk.SelectedIndex = 0;
+            cbMdl.SelectedIndex = 0;
+            txtYil.Text = "";
+            cbRenk.SelectedIndex = 0;
+            cbYakitT.SelectedIndex = 0;
+            cbKasaT.SelectedIndex = 0;
+            cbMtrGuc.SelectedIndex = 0;
+            cbMtrHac.SelectedIndex = 0;
+            cbHasarD.SelectedIndex = 1;
+            txtHasarT.Text = "";
+            dateBakim.Value = DateTime.Now;
+            dateMuayene.Value = DateTime.Now;
+            txtKilometre.Text = "";
+            txtFiyat.Text = "";
+            cbVites.SelectedIndex = 0;
+            cbSatisD.SelectedIndex = 0;
+            txtAciklama.Text = "";
+        }
+
+        private void btnAracGüncelle_Click(object sender, EventArgs e)
+        {
+
+            if (seciliArac == null)
+            {
+                MessageBox.Show("Güncelleme işlemi için lütfen önce listeden kayıt seçiniz");
+                return;
+            }
+            seciliArac.Aciklama = txtAciklama.Text;
+            seciliArac.Fiyat = Convert.ToDecimal(txtFiyat.Text);
+            seciliArac.HasarKaydiTutari = Convert.ToDecimal(txtHasarT.Text);
+            seciliArac.HasarKaydiVarMi = cbHasarD.Text;
+            seciliArac.KasaTipId = (int)cbKasaT.SelectedValue;
+            seciliArac.Kilometre = Convert.ToInt32(txtKilometre.Text);
+            seciliArac.MarkaId = (int)cbMrk.SelectedValue;
+            seciliArac.ModelId = (int)cbMdl.SelectedValue;
+            seciliArac.ModelYili = Convert.ToInt32(txtYil.Text);
+            seciliArac.MotorGucu = cbMtrGuc.Text;
+            seciliArac.MotorHacmi = cbMtrHac.Text;
+            seciliArac.Plaka = txtPlk.Text;
+            seciliArac.Renk = cbRenk.Text;
+            seciliArac.RuhsatNo = txtRhst.Text;
+            seciliArac.SasiNo = txtSasi.Text;
+            seciliArac.SatildiMi = Convert.ToBoolean(cbSatisD.SelectedValue);
+            seciliArac.SonBakimTarihi = dateBakim.Value;
+            seciliArac.SonMuayeneTarihi = dateMuayene.Value;
+            seciliArac.VasitaTurId = (int)cbVasitaTuru.SelectedValue;
+            seciliArac.VitesTipId = (int)cbVites.SelectedValue;
+            seciliArac.YakitTurId = (int)cbYakitT.SelectedValue;
+
+           
+            context.SaveChanges();
+
+            MessageBox.Show("Kayıt başarıyla güncellendi");
+
+            dataGridView1.DataSource = aracDal.GetirAracDetayDtoList();
+
+            InputlariResetle();
+            seciliArac = null;
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                var araclar = dataGridView1.SelectedRows[0].DataBoundItem as AracDetayDto;
+
+                seciliArac = context.Araclar.SingleOrDefault(x => x.Id == araclar.Id);
+
+                txtSasi.Text = seciliArac.SasiNo;
+                txtRhst.Text = seciliArac.RuhsatNo;
+                txtPlk.Text = seciliArac.Plaka;
+                cbVasitaTuru.SelectedValue = seciliArac.VasitaTurId;
+                cbMrk.SelectedValue = seciliArac.MarkaId;
+                cbMdl.SelectedValue = seciliArac.ModelId;
+                cbRenk.Text = seciliArac.Renk;
+                txtYil.Text = seciliArac.ModelYili.ToString();
+                cbMtrGuc.Text = seciliArac.MotorGucu;
+                cbMtrHac.Text = seciliArac.MotorHacmi;
+                cbHasarD.Text = seciliArac.HasarKaydiVarMi;
+                txtHasarT.Text = seciliArac.HasarKaydiTutari.ToString();
+                dateBakim.Value = seciliArac.SonBakimTarihi;
+                dateMuayene.Value = seciliArac.SonMuayeneTarihi == DateTime.MinValue ? DateTime.Now : seciliArac.SonMuayeneTarihi;
+                txtKilometre.Text = seciliArac.Kilometre.ToString();
+                txtFiyat.Text = seciliArac.Fiyat.ToString();
+                cbVites.SelectedValue = seciliArac.VitesTipId;
+                cbSatisD.Text = araclar.SatilmaDurumu;
+                txtAciklama.Text = seciliArac.Aciklama;
+
+            }
+            else
+            {
+                InputlariResetle();
+            }
+        }
+
+        private void btnAracSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (seciliArac == null)
+                {
+                    MessageBox.Show("Silme işlemi için önce kayıt seçiniz");
+                    return;
+                }
+
+                context.Araclar.Remove(seciliArac);
+                context.SaveChanges();
+                MessageBox.Show("Kayıt başarıyla silindi");
+                dataGridView1.DataSource = aracDal.GetirAracDetayDtoList();
+                InputlariResetle();
+                seciliArac = null;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seçilen araç silme işlemine yetkiniz yoktur.");
+            }
+        }
+
+        private void btnAracFormTemizle_Click(object sender, EventArgs e)
+        {
+            InputlariResetle();
+            seciliArac = null;
+        }
+
+        private void btnTumArac_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = aracDal.GetirAracDetayDtoList();
         }
     }
 }

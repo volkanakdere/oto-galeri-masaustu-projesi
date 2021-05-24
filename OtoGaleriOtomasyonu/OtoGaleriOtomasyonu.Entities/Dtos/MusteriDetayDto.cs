@@ -14,5 +14,6 @@ namespace OtoGaleriOtomasyonu.Entities.Dtos
         public string MusteriCinsiyet { get; set; }
         public string MusteriTelefon { get; set; }
         public string MusteriEPosta { get; set; }
+        public string FullName => MusteriAdı + " " + MusteriSoyadı;
     }
 }

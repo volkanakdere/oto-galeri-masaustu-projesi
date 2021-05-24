@@ -79,9 +79,9 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.btnArcgtr = new System.Windows.Forms.Button();
             this.txtPlakayaGoreArcGtr = new System.Windows.Forms.TextBox();
             this.lblArcGtr = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAracFormTemizle = new System.Windows.Forms.Button();
+            this.btnTumArac = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -89,8 +89,10 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(2, 374);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(689, 130);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // lblSasi
             // 
@@ -275,7 +277,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // lblAcik
             // 
             this.lblAcik.AutoSize = true;
-            this.lblAcik.Location = new System.Drawing.Point(454, 9);
+            this.lblAcik.Location = new System.Drawing.Point(454, 15);
             this.lblAcik.Name = "lblAcik";
             this.lblAcik.Size = new System.Drawing.Size(53, 13);
             this.lblAcik.TabIndex = 21;
@@ -421,10 +423,10 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(513, 6);
+            this.txtAciklama.Location = new System.Drawing.Point(513, 12);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
-            this.txtAciklama.Size = new System.Drawing.Size(160, 63);
+            this.txtAciklama.Size = new System.Drawing.Size(160, 87);
             this.txtAciklama.TabIndex = 42;
             // 
             // btnAracEkle
@@ -445,6 +447,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.btnAracSil.TabIndex = 44;
             this.btnAracSil.Text = "Araç Sil";
             this.btnAracSil.UseVisualStyleBackColor = true;
+            this.btnAracSil.Click += new System.EventHandler(this.btnAracSil_Click);
             // 
             // btnAracGüncelle
             // 
@@ -454,12 +457,13 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.btnAracGüncelle.TabIndex = 45;
             this.btnAracGüncelle.Text = "Araç Güncelle";
             this.btnAracGüncelle.UseVisualStyleBackColor = true;
+            this.btnAracGüncelle.Click += new System.EventHandler(this.btnAracGüncelle_Click);
             // 
             // btnAnasayfaD
             // 
-            this.btnAnasayfaD.Location = new System.Drawing.Point(544, 336);
+            this.btnAnasayfaD.Location = new System.Drawing.Point(585, 175);
             this.btnAnasayfaD.Name = "btnAnasayfaD";
-            this.btnAnasayfaD.Size = new System.Drawing.Size(129, 32);
+            this.btnAnasayfaD.Size = new System.Drawing.Size(88, 82);
             this.btnAnasayfaD.TabIndex = 46;
             this.btnAnasayfaD.Text = "Anasayfaya Dön";
             this.btnAnasayfaD.UseVisualStyleBackColor = true;
@@ -481,9 +485,9 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // btnArcgtr
             // 
-            this.btnArcgtr.Location = new System.Drawing.Point(438, 284);
+            this.btnArcgtr.Location = new System.Drawing.Point(457, 284);
             this.btnArcgtr.Name = "btnArcgtr";
-            this.btnArcgtr.Size = new System.Drawing.Size(152, 27);
+            this.btnArcgtr.Size = new System.Drawing.Size(124, 27);
             this.btnArcgtr.TabIndex = 49;
             this.btnArcgtr.Text = "Araç Bilgilerini Getir";
             this.btnArcgtr.UseVisualStyleBackColor = true;
@@ -494,7 +498,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.txtPlakayaGoreArcGtr.Location = new System.Drawing.Point(267, 284);
             this.txtPlakayaGoreArcGtr.Multiline = true;
             this.txtPlakayaGoreArcGtr.Name = "txtPlakayaGoreArcGtr";
-            this.txtPlakayaGoreArcGtr.Size = new System.Drawing.Size(165, 27);
+            this.txtPlakayaGoreArcGtr.Size = new System.Drawing.Size(184, 27);
             this.txtPlakayaGoreArcGtr.TabIndex = 50;
             // 
             // lblArcGtr
@@ -506,13 +510,25 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.lblArcGtr.TabIndex = 51;
             this.lblArcGtr.Text = "Bilgilerini Getirmek İstedğiniz Aracın Plakasını Giriniz:";
             // 
-            // pictureBox1
+            // btnAracFormTemizle
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(457, 75);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 182);
-            this.pictureBox1.TabIndex = 52;
-            this.pictureBox1.TabStop = false;
+            this.btnAracFormTemizle.Location = new System.Drawing.Point(513, 107);
+            this.btnAracFormTemizle.Name = "btnAracFormTemizle";
+            this.btnAracFormTemizle.Size = new System.Drawing.Size(160, 62);
+            this.btnAracFormTemizle.TabIndex = 53;
+            this.btnAracFormTemizle.Text = "Formu Temizle";
+            this.btnAracFormTemizle.UseVisualStyleBackColor = true;
+            this.btnAracFormTemizle.Click += new System.EventHandler(this.btnAracFormTemizle_Click);
+            // 
+            // btnTumArac
+            // 
+            this.btnTumArac.Location = new System.Drawing.Point(542, 336);
+            this.btnTumArac.Name = "btnTumArac";
+            this.btnTumArac.Size = new System.Drawing.Size(140, 32);
+            this.btnTumArac.TabIndex = 54;
+            this.btnTumArac.Text = "Tüm Araçları Getir";
+            this.btnTumArac.UseVisualStyleBackColor = true;
+            this.btnTumArac.Click += new System.EventHandler(this.btnTumArac_Click);
             // 
             // aracekle
             // 
@@ -520,7 +536,8 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(685, 503);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnTumArac);
+            this.Controls.Add(this.btnAracFormTemizle);
             this.Controls.Add(this.lblArcGtr);
             this.Controls.Add(this.txtPlakayaGoreArcGtr);
             this.Controls.Add(this.btnArcgtr);
@@ -576,7 +593,6 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.Text = "AKDERE OTOMOTİV | Araç Ekle - Araç Sil - Araç Güncelle";
             this.Load += new System.EventHandler(this.aracekle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -634,6 +650,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
         private System.Windows.Forms.Button btnArcgtr;
         private System.Windows.Forms.TextBox txtPlakayaGoreArcGtr;
         private System.Windows.Forms.Label lblArcGtr;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAracFormTemizle;
+        private System.Windows.Forms.Button btnTumArac;
     }
 }

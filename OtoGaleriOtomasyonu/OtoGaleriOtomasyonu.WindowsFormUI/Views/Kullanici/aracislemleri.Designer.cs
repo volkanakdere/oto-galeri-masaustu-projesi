@@ -60,9 +60,9 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             this.btneklesil.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btneklesil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btneklesil.Location = new System.Drawing.Point(501, 63);
+            this.btneklesil.Location = new System.Drawing.Point(392, 130);
             this.btneklesil.Name = "btneklesil";
-            this.btneklesil.Size = new System.Drawing.Size(167, 61);
+            this.btneklesil.Size = new System.Drawing.Size(276, 114);
             this.btneklesil.TabIndex = 1;
             this.btneklesil.Text = "Araç Ekle - Araç Sil - Araç Güncelle";
             this.btneklesil.UseVisualStyleBackColor = true;
@@ -70,9 +70,9 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // btnTumArac
             // 
-            this.btnTumArac.Location = new System.Drawing.Point(12, 199);
+            this.btnTumArac.Location = new System.Drawing.Point(3, 199);
             this.btnTumArac.Name = "btnTumArac";
-            this.btnTumArac.Size = new System.Drawing.Size(207, 45);
+            this.btnTumArac.Size = new System.Drawing.Size(121, 45);
             this.btnTumArac.TabIndex = 4;
             this.btnTumArac.Text = "Tüm Araçları Göster";
             this.btnTumArac.UseVisualStyleBackColor = true;
@@ -80,9 +80,9 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // btnAnasayfaD
             // 
-            this.btnAnasayfaD.Location = new System.Drawing.Point(501, 12);
+            this.btnAnasayfaD.Location = new System.Drawing.Point(584, 12);
             this.btnAnasayfaD.Name = "btnAnasayfaD";
-            this.btnAnasayfaD.Size = new System.Drawing.Size(167, 45);
+            this.btnAnasayfaD.Size = new System.Drawing.Size(84, 69);
             this.btnAnasayfaD.TabIndex = 6;
             this.btnAnasayfaD.Text = "Anasayfaya Dön";
             this.btnAnasayfaD.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             this.btnAracislemListele.Location = new System.Drawing.Point(202, 20);
             this.btnAracislemListele.Name = "btnAracislemListele";
-            this.btnAracislemListele.Size = new System.Drawing.Size(121, 73);
+            this.btnAracislemListele.Size = new System.Drawing.Size(92, 73);
             this.btnAracislemListele.TabIndex = 7;
             this.btnAracislemListele.Text = "Araç Listele";
             this.btnAracislemListele.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // txtAracislemRuhsatNo
             // 
-            this.txtAracislemRuhsatNo.Location = new System.Drawing.Point(103, 139);
+            this.txtAracislemRuhsatNo.Location = new System.Drawing.Point(75, 130);
             this.txtAracislemRuhsatNo.Name = "txtAracislemRuhsatNo";
             this.txtAracislemRuhsatNo.Size = new System.Drawing.Size(121, 20);
             this.txtAracislemRuhsatNo.TabIndex = 9;
@@ -143,7 +143,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // lblAracislemRuhsatNo
             // 
             this.lblAracislemRuhsatNo.AutoSize = true;
-            this.lblAracislemRuhsatNo.Location = new System.Drawing.Point(28, 146);
+            this.lblAracislemRuhsatNo.Location = new System.Drawing.Point(0, 137);
             this.lblAracislemRuhsatNo.Name = "lblAracislemRuhsatNo";
             this.lblAracislemRuhsatNo.Size = new System.Drawing.Size(61, 13);
             this.lblAracislemRuhsatNo.TabIndex = 15;
@@ -151,7 +151,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // txtAracislemPlaka
             // 
-            this.txtAracislemPlaka.Location = new System.Drawing.Point(103, 165);
+            this.txtAracislemPlaka.Location = new System.Drawing.Point(75, 156);
             this.txtAracislemPlaka.Name = "txtAracislemPlaka";
             this.txtAracislemPlaka.Size = new System.Drawing.Size(121, 20);
             this.txtAracislemPlaka.TabIndex = 16;
@@ -159,7 +159,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // lblAracislemPlaka
             // 
             this.lblAracislemPlaka.AutoSize = true;
-            this.lblAracislemPlaka.Location = new System.Drawing.Point(52, 172);
+            this.lblAracislemPlaka.Location = new System.Drawing.Point(24, 163);
             this.lblAracislemPlaka.Name = "lblAracislemPlaka";
             this.lblAracislemPlaka.Size = new System.Drawing.Size(37, 13);
             this.lblAracislemPlaka.TabIndex = 18;
@@ -184,7 +184,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // btnAra
             // 
-            this.btnAra.Location = new System.Drawing.Point(230, 139);
+            this.btnAra.Location = new System.Drawing.Point(202, 130);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(75, 46);
             this.btnAra.TabIndex = 21;

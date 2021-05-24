@@ -31,13 +31,6 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.Hide();
         }
 
-        private void btnBakimis_Click(object sender, EventArgs e)
-        {
-            bakimislemleri frm = new bakimislemleri();
-            frm.Show();
-            this.Hide();
-        }
-
         private void anasayfa_Load(object sender, EventArgs e)
         {
             timer1.Start();

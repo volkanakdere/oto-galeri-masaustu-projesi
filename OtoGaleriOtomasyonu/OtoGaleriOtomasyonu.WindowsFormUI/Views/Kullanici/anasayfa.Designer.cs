@@ -34,7 +34,6 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.btnAracislem = new System.Windows.Forms.Button();
             this.btnMusteris = new System.Windows.Forms.Button();
             this.btnSatisis = new System.Windows.Forms.Button();
-            this.btnBakimis = new System.Windows.Forms.Button();
             this.btnCikis = new System.Windows.Forms.Button();
             this.lblAnasayfaTarih = new System.Windows.Forms.Label();
             this.lblAnasayfaSaat = new System.Windows.Forms.Label();
@@ -43,7 +42,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // btnAracislem
             // 
-            this.btnAracislem.Location = new System.Drawing.Point(12, 12);
+            this.btnAracislem.Location = new System.Drawing.Point(12, 46);
             this.btnAracislem.Name = "btnAracislem";
             this.btnAracislem.Size = new System.Drawing.Size(277, 46);
             this.btnAracislem.TabIndex = 0;
@@ -53,7 +52,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // btnMusteris
             // 
-            this.btnMusteris.Location = new System.Drawing.Point(12, 64);
+            this.btnMusteris.Location = new System.Drawing.Point(12, 98);
             this.btnMusteris.Name = "btnMusteris";
             this.btnMusteris.Size = new System.Drawing.Size(277, 46);
             this.btnMusteris.TabIndex = 1;
@@ -63,23 +62,13 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             // 
             // btnSatisis
             // 
-            this.btnSatisis.Location = new System.Drawing.Point(12, 116);
+            this.btnSatisis.Location = new System.Drawing.Point(12, 150);
             this.btnSatisis.Name = "btnSatisis";
             this.btnSatisis.Size = new System.Drawing.Size(277, 46);
             this.btnSatisis.TabIndex = 2;
             this.btnSatisis.Text = "Satış İşlemleri";
             this.btnSatisis.UseVisualStyleBackColor = true;
             this.btnSatisis.Click += new System.EventHandler(this.btnSatisis_Click);
-            // 
-            // btnBakimis
-            // 
-            this.btnBakimis.Location = new System.Drawing.Point(12, 168);
-            this.btnBakimis.Name = "btnBakimis";
-            this.btnBakimis.Size = new System.Drawing.Size(277, 46);
-            this.btnBakimis.TabIndex = 3;
-            this.btnBakimis.Text = "Bakım İşlemleri";
-            this.btnBakimis.UseVisualStyleBackColor = true;
-            this.btnBakimis.Click += new System.EventHandler(this.btnBakimis_Click);
             // 
             // btnCikis
             // 
@@ -133,7 +122,6 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.Controls.Add(this.lblAnasayfaSaat);
             this.Controls.Add(this.lblAnasayfaTarih);
             this.Controls.Add(this.btnCikis);
-            this.Controls.Add(this.btnBakimis);
             this.Controls.Add(this.btnSatisis);
             this.Controls.Add(this.btnMusteris);
             this.Controls.Add(this.btnAracislem);
@@ -151,7 +139,6 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
         private System.Windows.Forms.Button btnAracislem;
         private System.Windows.Forms.Button btnMusteris;
         private System.Windows.Forms.Button btnSatisis;
-        private System.Windows.Forms.Button btnBakimis;
         private System.Windows.Forms.Button btnCikis;
         private System.Windows.Forms.Label lblAnasayfaTarih;
         private System.Windows.Forms.Label lblAnasayfaSaat;

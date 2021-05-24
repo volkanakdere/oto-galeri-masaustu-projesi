@@ -99,5 +99,92 @@ namespace OtoGaleriOtomasyonu.DataAccess.Concrete
 
             return query.ToList();
         }
+
+        public List<AracDetayDto> GetirSatılıkAracDetayDtoList()
+        {
+            var query = from araclar in context.Araclar
+                        join markalar in context.Markalar
+                        on araclar.MarkaId equals markalar.Id
+                        join modeller in context.Modeller
+                        on araclar.ModelId equals modeller.Id
+                        join yakitturleri in context.YakitTurleri
+                        on araclar.YakitTurId equals yakitturleri.Id
+                        where araclar.SatildiMi == false
+                        select new AracDetayDto
+                        {
+                            Fiyat = araclar.Fiyat,
+                            Id = araclar.Id,
+                            Kilometre = araclar.Kilometre,
+                            Marka = markalar.MarkaAdi,
+                            Model = modeller.ModelAdi,
+                            ModelYili = araclar.ModelYili,
+                            Plaka = araclar.Plaka,
+                            Renk = araclar.Renk,
+                            RuhsatNo = araclar.RuhsatNo,
+                            SasiNo = araclar.SasiNo,
+                            YakitTur = yakitturleri.YakitTuru,
+                            SatilmaDurumu = araclar.SatildiMi == true ? "Satıldı" : "Satılık"
+                        };
+
+            return query.ToList();
+        }
+
+        public List<AracDetayDto> GetirSatılanAracDetayDtoList()
+        {
+            var query = from araclar in context.Araclar
+                        join markalar in context.Markalar
+                        on araclar.MarkaId equals markalar.Id
+                        join modeller in context.Modeller
+                        on araclar.ModelId equals modeller.Id
+                        join yakitturleri in context.YakitTurleri
+                        on araclar.YakitTurId equals yakitturleri.Id
+                        where araclar.SatildiMi == true
+                        select new AracDetayDto
+                        {
+                            Fiyat = araclar.Fiyat,
+                            Id = araclar.Id,
+                            Kilometre = araclar.Kilometre,
+                            Marka = markalar.MarkaAdi,
+                            Model = modeller.ModelAdi,
+                            ModelYili = araclar.ModelYili,
+                            Plaka = araclar.Plaka,
+                            Renk = araclar.Renk,
+                            RuhsatNo = araclar.RuhsatNo,
+                            SasiNo = araclar.SasiNo,
+                            YakitTur = yakitturleri.YakitTuru,
+                            SatilmaDurumu = araclar.SatildiMi == true ? "Satıldı" : "Satılık"
+                        };
+
+            return query.ToList();
+        }
+
+        public List<AracDetayDto> GetirAracDetayDtoByAracId(int aracId)
+        {
+            var query = from araclar in context.Araclar
+                        join markalar in context.Markalar
+                        on araclar.MarkaId equals markalar.Id
+                        join modeller in context.Modeller
+                        on araclar.ModelId equals modeller.Id
+                        join yakitturleri in context.YakitTurleri
+                        on araclar.YakitTurId equals yakitturleri.Id
+                        where araclar.Id == aracId
+                        select new AracDetayDto
+                        {
+                            Fiyat = araclar.Fiyat,
+                            Id = araclar.Id,
+                            Kilometre = araclar.Kilometre,
+                            Marka = markalar.MarkaAdi,
+                            Model = modeller.ModelAdi,
+                            ModelYili = araclar.ModelYili,
+                            Plaka = araclar.Plaka,
+                            Renk = araclar.Renk,
+                            RuhsatNo = araclar.RuhsatNo,
+                            SasiNo = araclar.SasiNo,
+                            YakitTur = yakitturleri.YakitTuru,
+                            SatilmaDurumu = araclar.SatildiMi == true ? "Satıldı" : "Satılık"
+                        };
+
+            return query.ToList();
+        }
     }
 }
