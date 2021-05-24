@@ -37,11 +37,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             dgvSatis.DataSource = aracDal.GetirSatılıkAracDetayDtoList();
 
         }
-
-        private void btnSatilikSayi_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void satisislemleri_Load(object sender, EventArgs e)
         {
@@ -93,6 +89,11 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             context.SaveChanges();
             MessageBox.Show("Araç satışı başarıyla gerçeklesti");
             DoldurCbAraclar();
+        }
+
+        private void btnSatilanAraclariGetir_Click(object sender, EventArgs e)
+        {
+            dgvSatis.DataSource = aracDal.GetirSatılanAracDetayDtoList();
         }
     }
 }

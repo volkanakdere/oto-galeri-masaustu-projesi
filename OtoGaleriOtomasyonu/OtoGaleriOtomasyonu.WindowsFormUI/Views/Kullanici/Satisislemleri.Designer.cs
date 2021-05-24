@@ -37,7 +37,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.btnSat = new System.Windows.Forms.Button();
             this.btnAnasayfaD = new System.Windows.Forms.Button();
             this.dgvSatis = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSatilanAraclariGetir = new System.Windows.Forms.Button();
             this.cbMusteriler = new System.Windows.Forms.ComboBox();
             this.cbAraclar = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSatis)).BeginInit();
@@ -115,14 +115,15 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.dgvSatis.Size = new System.Drawing.Size(626, 245);
             this.dgvSatis.TabIndex = 11;
             // 
-            // button1
+            // btnSatilanAraclariGetir
             // 
-            this.button1.Location = new System.Drawing.Point(518, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 93);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Satılan Araçları Göster";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSatilanAraclariGetir.Location = new System.Drawing.Point(518, 1);
+            this.btnSatilanAraclariGetir.Name = "btnSatilanAraclariGetir";
+            this.btnSatilanAraclariGetir.Size = new System.Drawing.Size(103, 93);
+            this.btnSatilanAraclariGetir.TabIndex = 15;
+            this.btnSatilanAraclariGetir.Text = "Satılan Araçları Göster";
+            this.btnSatilanAraclariGetir.UseVisualStyleBackColor = true;
+            this.btnSatilanAraclariGetir.Click += new System.EventHandler(this.btnSatilanAraclariGetir_Click);
             // 
             // cbMusteriler
             // 
@@ -149,7 +150,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
             this.ControlBox = false;
             this.Controls.Add(this.cbAraclar);
             this.Controls.Add(this.cbMusteriler);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSatilanAraclariGetir);
             this.Controls.Add(this.dgvSatis);
             this.Controls.Add(this.btnAnasayfaD);
             this.Controls.Add(this.btnSat);
@@ -178,7 +179,7 @@ namespace OtoGaleriOtomasyonu.WindowsFormUI.Views.Kullanici
         private System.Windows.Forms.Button btnSat;
         private System.Windows.Forms.Button btnAnasayfaD;
         private System.Windows.Forms.DataGridView dgvSatis;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSatilanAraclariGetir;
         private System.Windows.Forms.ComboBox cbMusteriler;
         private System.Windows.Forms.ComboBox cbAraclar;
     }
